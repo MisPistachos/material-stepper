@@ -99,7 +99,6 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
     protected void applyTheme() {
 
         findColors();
-
         if (getSupportActionBar() != null) {
 
             getSupportActionBar().setTitle(Html.fromHtml(mTitle));
