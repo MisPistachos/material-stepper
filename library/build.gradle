@@ -49,16 +49,18 @@ bintray {
 task writeNewPom << {
     pom {
         project {
-            inceptionYear '2015'
+            groupId 'com.github.mispistachos'
+
+            inceptionYear '2014'
             licenses {
                 license {
-                    name 'The Apache Software License, Version 2.0'
-                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    name 'MIT'
+                    url 'http://opensource.org/licenses/MIT'
                     distribution 'repo'
                 }
             }
         }
-    }.writeTo("pom.xml")
+    }.writeTo("$buildDir/0.1.1.pom.xml")
 }
 //Gradle writeNewPom
 //Gradle bintrayUpload
