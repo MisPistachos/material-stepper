@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
@@ -54,6 +55,11 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
 
     protected void setTitle(String mTitle) {
         this.mTitle = mTitle;
+    }
+    protected void setToolbar(Toolbar toolbar,boolean homeAsUp, boolean ShowHome){
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(homeAsUp);
+        getSupportActionBar().setDisplayShowHomeEnabled(ShowHome);
     }
 
     protected void setColorPrimary(int primaryColor) {
