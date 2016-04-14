@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: "com.jfrog.bintray"
+apply plugin: 'maven'
 
 android {
     compileSdkVersion 23
@@ -18,6 +19,9 @@ android {
         }
     }
 }
+
+group = 'miaPistachos'
+version = '1.1.0'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -42,3 +46,19 @@ bintray {
         publish = true
     }
 }
+task writeNewPom << {
+    pom {
+        project {
+            inceptionYear '2015'
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+        }
+    }.writeTo("pom.xml")
+}
+//Gradle writeNewPom
+//Gradle bintrayUpload
